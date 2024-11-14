@@ -18,6 +18,17 @@ const borrowBook = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const returnBook = catchAsync(async (req: Request, res: Response) => {
+  // console.log(req.body);
+  await brecordServices.returnBookToDB(req.body);
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: "Book returned successfully",
+  });
+});
+
 export const brecordController = {
   borrowBook,
+  returnBook,
 };

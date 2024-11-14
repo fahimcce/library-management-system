@@ -1,6 +1,8 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import router from "./app/routes";
+import globalErrorHandler from "./app/middlewares/globalErrorHandler";
+import notFound from "./app/middlewares/notFound";
 // import router from "./app/routes";
 // import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 // import notFound from "./app/middlewares/notFound";
@@ -18,8 +20,8 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api", router);
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
-// app.use(notFound);
+app.use(notFound);
 
 export default app;

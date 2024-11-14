@@ -14,7 +14,7 @@ const moduleRoutes = [
     route: memberRoutes,
   },
   {
-    path: "/borrow",
+    path: "/",
     route: brecordRoutes,
   },
 ];
