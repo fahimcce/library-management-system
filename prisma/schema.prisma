@@ -36,10 +36,10 @@ model Member {
 
 model BorrowRecord {
   borrowId       String   @id @default(uuid())
-  borrowDate     DateTime
-  returnDate     DateTime? 
   bookId         String
   memberId       String
+  borrowDate     DateTime @default(now())
+  returnDate     DateTime? 
 
   // Relations
   book           Book     @relation(fields: [bookId], references: [bookId])
