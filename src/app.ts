@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from Ph Health Care Server...");
+  res.send("Hello from Library management system...");
 });
 
 app.use("/api", router);
